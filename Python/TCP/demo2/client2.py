@@ -8,18 +8,13 @@ def main():
     # 2. 链接服务器
     tcp_socket.connect(("127.0.0.1",  10000))
     
-
-    # 3. 发送数据/接收数据
     while True:
+        # 3. 发送数据/接收数据
         send_data = input("请输入要发送的数据:")
-        if send_data == 'exit':
-            break
-        tcp_socket.send(send_data.encode("utf-8"))
-        
-
-    # 4. 关闭套接字
-    tcp_socket.close()
-
+        if send_data == "exit":
+            # 4. 关闭套接字
+            tcp_socket.close()
+        tcp_socket.send(send_data.encode("utf-8")) 
 
 if __name__ == "__main__":
     main()
