@@ -12,9 +12,9 @@ def main():
         # 3. 发送数据/接收数据
         send_data = input("请输入要发送的数据:")
         if send_data == "exit":
-            # 4. 关闭套接字
-            tcp_socket.close()
+            break
         tcp_socket.send(send_data.encode("utf-8")) 
-
+    # 4. 关闭套接字
+    tcp_socket.close()
 if __name__ == "__main__":
     main()
